@@ -85,7 +85,7 @@ public class OAuthAttributes {
                 .role(userRole) // 가입할 때 기본 권한
                 .provider(provider)
                 .providerId(providerId)
-                .userId(userId)
+                .memberId(userId)
                 .build();
     }
 }

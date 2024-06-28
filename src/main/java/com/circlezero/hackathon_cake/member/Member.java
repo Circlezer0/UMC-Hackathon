@@ -1,15 +1,20 @@
 package com.circlezero.hackathon_cake.member;
 
+import com.circlezero.hackathon_cake.domain.Review;
+import com.circlezero.hackathon_cake.domain.common.BaseEntity;
+import com.circlezero.hackathon_cake.domain.mapping.MemberCommunityPost;
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
-@Setter
-@Table(name = "members")
-public class Member {
+@Builder
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
+public class Member extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,21 +30,6 @@ public class Member {
     private Role role;          // 유저의 페이지 관람 권한
 
 
-    @Builder
-    public Member(String userId, String name, String nickname, String email,
-                  String password, Role role, String provider, String providerId) {
-        this.memberId = userId;
-        this.name = name;
-        this.nickname = nickname;
-        this.email = email;
-        this.password = password;
-        this.role = role;
-        this.provider = provider;
-        this.providerId = providerId;
-    }
-
-    public Member() { }
-
     public Member update(String name) {
         this.name = name;
         return this;
@@ -48,4 +38,7 @@ public class Member {
     public String getRoleKey() {
         return this.role.getKey();
     }
+
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    private List<MemberCommunityPost> memberCommunityPostList = new ArrayList<>();
 }
