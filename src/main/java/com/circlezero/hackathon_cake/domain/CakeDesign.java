@@ -4,6 +4,9 @@ import com.circlezero.hackathon_cake.domain.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Builder
@@ -15,6 +18,10 @@ public class CakeDesign extends BaseEntity {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "member_id")
+    private Member member;
+
+    @OneToMany(mappedBy = "CakeDesign", cascade = CascadeType.ALL)
+    private List<CakeDesignCakeStore> cake_design_cakes_toreList = new ArrayList<>();
+
 }
