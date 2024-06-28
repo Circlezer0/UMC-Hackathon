@@ -1,4 +1,6 @@
 package com.circlezero.hackathon_cake.domain;
 
-public class CommunityPost {
+import com.circlezero.hackathon_cake.domain.common.BaseEntity;
+
+public class CommunityPost extends BaseEntity {
 }

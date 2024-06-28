@@ -1,5 +1,6 @@
 package com.circlezero.hackathon_cake.domain;
 
+import com.circlezero.hackathon_cake.domain.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -11,7 +12,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class CakeStore {
+public class CakeStore extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
