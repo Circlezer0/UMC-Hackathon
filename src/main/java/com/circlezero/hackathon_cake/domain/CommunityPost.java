@@ -1,6 +1,7 @@
 package com.circlezero.hackathon_cake.domain;
 
 import com.circlezero.hackathon_cake.domain.common.BaseEntity;
+import com.circlezero.hackathon_cake.domain.mapping.MemberCommunityPost;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;

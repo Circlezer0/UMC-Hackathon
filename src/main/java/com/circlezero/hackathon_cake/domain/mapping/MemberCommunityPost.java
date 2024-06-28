@@ -1,19 +1,18 @@
-package com.circlezero.hackathon_cake.domain;
+package com.circlezero.hackathon_cake.domain.mapping;
 
+import com.circlezero.hackathon_cake.domain.CommunityPost;
+import com.circlezero.hackathon_cake.domain.Member;
 import com.circlezero.hackathon_cake.domain.common.BaseEntity;
-import com.circlezero.hackathon_cake.domain.mapping.CakeDesignCakeStore;
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Getter
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class CakeDesign extends BaseEntity {
+public class MemberCommunityPost extends BaseEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,7 +21,7 @@ public class CakeDesign extends BaseEntity {
     @JoinColumn(name = "member_id")
     private Member member;
 
-    @OneToMany(mappedBy = "CakeDesign", cascade = CascadeType.ALL)
-    private List<CakeDesignCakeStore> cake_design_cakes_toreList = new ArrayList<>();
-
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "communtiy_post_id")
+    private CommunityPost communityPost;
 }
