@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Optional;
+
 @RestController
 @RequiredArgsConstructor
 public class MemberController {
@@ -27,5 +29,14 @@ public class MemberController {
     public ApiResponse<MemberResponseDTO.JoinResultDTO> join(@RequestBody MemberRequestDTO.JoinDto request) {
         Member member = memberService.signInMember(request);
         return ApiResponse.onSuccess(MemberConverter.toJoinResultDTO(member));
+    }
+
+    @PostMapping("/members/login")
+    public ApiResponse<MemberResponseDTO.LoginResultDTO> login(@RequestBody MemberRequestDTO.LoginDto request) {
+        Optional<Member> memberOptional = memberService.loginMember(request);
+        if(memberOptional.isPresent()){
+            return ApiResponse.onSuccess(MemberConverter.toLoginResultDTO(memberOptional.get()));
+        }
+        return ApiResponse.onFailure("MEMBER4001", "사용자가 없습니다", null);
     }
 }

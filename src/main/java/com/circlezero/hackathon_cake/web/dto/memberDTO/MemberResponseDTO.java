@@ -17,4 +17,13 @@ public class MemberResponseDTO {
         String name;
         String nickname;
     }
+
+    @Builder
+    @Getter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class LoginResultDTO {
+        String name;
+        String nickname;
+    }
 }

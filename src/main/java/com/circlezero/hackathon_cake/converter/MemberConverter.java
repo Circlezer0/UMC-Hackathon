@@ -13,6 +13,13 @@ public class MemberConverter {
                 .build();
     }
 
+    public static MemberResponseDTO.LoginResultDTO toLoginResultDTO(Member member){
+        return MemberResponseDTO.LoginResultDTO.builder()
+                .name(member.getName())
+                .nickname(member.getNickname())
+                .build();
+    }
+
     public static Member toMember(MemberRequestDTO.JoinDto request){
         return Member.builder()
                 .name(request.getName())
