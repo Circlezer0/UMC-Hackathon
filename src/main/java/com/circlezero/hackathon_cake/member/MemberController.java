@@ -18,6 +18,7 @@ public class MemberController {
 
     @GetMapping("/members/regist/google")
     public ApiResponse<MemberResponseDTO.JoinResultDTO> joinGoogle(){
+
         return null;
     }
 
