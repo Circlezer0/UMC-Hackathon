@@ -1,5 +1,7 @@
-package com.circlezero.hackathon_cake.domain;
+package com.circlezero.hackathon_cake.domain.mapping;
 
+import com.circlezero.hackathon_cake.domain.CommunityPost;
+import com.circlezero.hackathon_cake.domain.Member;
 import com.circlezero.hackathon_cake.domain.common.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
@@ -9,7 +11,8 @@ import lombok.*;
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
-public class CakeDesign extends BaseEntity {
+public class MemberCommunityPost extends BaseEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,4 +20,8 @@ public class CakeDesign extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "communtiy_post_id")
+    private CommunityPost communityPost;
 }

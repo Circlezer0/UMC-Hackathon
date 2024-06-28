@@ -29,6 +29,4 @@ public class CakeStore extends BaseEntity {
     @OneToMany(mappedBy = "CakeStore", cascade = CascadeType.ALL)
     private List<Review> reviewList = new ArrayList<>();
 
-    //@OneToMany(mappedBy = "CakeStore", cascade = CascadeType.ALL)
-    //private List<RecordImage> myMissionList = new ArrayList<>();
 }
