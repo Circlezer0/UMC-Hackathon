@@ -26,6 +26,8 @@ public class Member extends BaseEntity {
     private String email;       // oauth2 로그인에서 유저를 구분하기 위한 email
     private String provider;    // 로그인 API의 출처 (ex: Google, Kakao, Github)
     private String providerId;  // 구글에서 해당 유저의 고유 ID
+    private String phoneNumber;
+
     @Enumerated(EnumType.STRING)
     private Role role;          // 유저의 페이지 관람 권한
 

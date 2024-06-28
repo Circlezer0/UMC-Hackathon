@@ -1,9 +1,13 @@
 package com.circlezero.hackathon_cake.domain;
 
 import com.circlezero.hackathon_cake.domain.common.BaseEntity;
+import com.circlezero.hackathon_cake.domain.mapping.CakeStoreImage;
 import com.circlezero.hackathon_cake.member.Member;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -21,4 +25,12 @@ public class CakeImage extends BaseEntity {
 
     @Column(nullable = false)
     private String image_url;
+
+    @OneToMany(mappedBy = "cakeImage", cascade = CascadeType.ALL)
+    private List<CakeStoreImage> cakeStoreImageList = new ArrayList<>();
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "community_post_id")
+    private CommunityPost communityPost;
+
 }

@@ -1,7 +1,6 @@
 package com.circlezero.hackathon_cake.domain;
 
 import com.circlezero.hackathon_cake.domain.common.BaseEntity;
-import com.circlezero.hackathon_cake.domain.mapping.CakeDesignCakeStore;
 import com.circlezero.hackathon_cake.domain.mapping.CakeStoreImage;
 import jakarta.persistence.*;
 import lombok.*;
@@ -33,8 +32,4 @@ public class CakeStore extends BaseEntity {
 
     @OneToMany(mappedBy = "cakeStore", cascade = CascadeType.ALL)
     private List<CakeStoreImage> cake_store_imageList = new ArrayList<>();
-
-    @OneToMany(mappedBy = "cakeStore", cascade = CascadeType.ALL)
-    private List<CakeDesignCakeStore> cake_design_cake_storeList = new ArrayList<>();
-
 }

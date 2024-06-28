@@ -12,6 +12,7 @@ public class MemberRequestDTO {
         String nickname;
         String password;
         String email;
+        String phoneNumber;
     }
 
     @Getter

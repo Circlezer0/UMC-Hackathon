@@ -26,4 +26,7 @@ public class CommunityPost {
 
     @OneToMany(mappedBy = "communityPost", cascade = CascadeType.ALL)
     private List<MemberCommunityPost> member_community_postList = new ArrayList<>();
+
+    @OneToOne(mappedBy = "communityPost", cascade = CascadeType.ALL)
+    private CakeImage cakeImage;
 }
