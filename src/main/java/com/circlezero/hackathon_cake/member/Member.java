@@ -14,7 +14,7 @@ public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;            // DB에서의 id
-    private String userId;      // 유저의 id (소셜로그인 : provider + "_" + providerId)
+    private String memberId;      // 유저의 id (소셜로그인 : provider + "_" + providerId)
     private String password;    // form login 에서 pw
     private String name;        // 실명
     private String nickname;    // 닉네임
@@ -28,7 +28,7 @@ public class Member {
     @Builder
     public Member(String userId, String name, String nickname, String email,
                   String password, Role role, String provider, String providerId) {
-        this.userId = userId;
+        this.memberId = userId;
         this.name = name;
         this.nickname = nickname;
         this.email = email;

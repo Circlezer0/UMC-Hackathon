@@ -1,4 +1,4 @@
-package com.circlezero.hackathon_cake.secury;
+package com.circlezero.hackathon_cake.security;
 
 import com.circlezero.hackathon_cake.member.Member;
 import org.springframework.security.core.GrantedAuthority;
@@ -51,7 +51,7 @@ public class PrincipalDetails implements UserDetails, OAuth2User {
     public String getEmail() { return member.getEmail(); }
     public String getRole() { return member.getRoleKey(); }
     public String getNickname() { return member.getNickname(); }
-    public String getUserId() { return member.getUserId(); }
+    public String getUserId() { return member.getMemberId(); }
     public String getClientName() { return member.getProvider(); }
 
     /**

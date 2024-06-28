@@ -1,9 +1,8 @@
-package com.circlezero.hackathon_cake.secury;
+package com.circlezero.hackathon_cake.security;
 
 import com.circlezero.hackathon_cake.member.Member;
 import com.circlezero.hackathon_cake.member.MemberService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,14 +24,6 @@ public class OAuthController {
         return "signinForm";
     }
 
-    @PostMapping("/signinForm/process")
-    public String signinProcess(
-            @RequestParam(name = "userId") String userId,
-            @RequestParam(name = "name") String name,
-            @RequestParam(name = "password") String passwd){
-        Member member = memberService.signInMember(userId, name, passwd);
-        return "redirect:/loginForm";
-    }
 
     @GetMapping("/private")
     public String privatePage() {

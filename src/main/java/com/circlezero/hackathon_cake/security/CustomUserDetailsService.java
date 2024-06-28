@@ -1,4 +1,4 @@
-package com.circlezero.hackathon_cake.secury;
+package com.circlezero.hackathon_cake.security;
 
 import com.circlezero.hackathon_cake.member.Member;
 import com.circlezero.hackathon_cake.member.MemberRepository;
@@ -18,7 +18,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     private final MemberRepository memberRepository;
     @Override
     public UserDetails loadUserByUsername(String userId) throws UsernameNotFoundException {
-        Optional<Member> findResult = memberRepository.findByUserId(userId);
+        Optional<Member> findResult = memberRepository.findMemberByMemberId(userId);
         if(findResult.isEmpty()){
             throw new UsernameNotFoundException("해당 사용자를 찾을 수 없습니다");
         }

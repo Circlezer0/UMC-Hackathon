@@ -1,4 +1,4 @@
-package com.circlezero.hackathon_cake.secury;
+package com.circlezero.hackathon_cake.security;
 
 import com.circlezero.hackathon_cake.member.Member;
 import com.circlezero.hackathon_cake.member.MemberRepository;
@@ -23,8 +23,8 @@ public class CustomAuthenticationSuccessHandler extends SimpleUrlAuthenticationS
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
             throws IOException, ServletException {
-        String userId = ((PrincipalDetails) authentication.getPrincipal()).getUserId();
-        Optional<Member> member = memberRepository.findByUserId(userId);
+        String memberId = ((PrincipalDetails) authentication.getPrincipal()).getUserId();
+        Optional<Member> member = memberRepository.findMemberByMemberId(memberId);
         HttpSession session = request.getSession();
         member.ifPresent(value -> session.setAttribute("member", new SessionMember(value)));
 

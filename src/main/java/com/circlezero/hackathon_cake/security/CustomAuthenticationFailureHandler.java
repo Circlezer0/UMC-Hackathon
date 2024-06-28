@@ -1,4 +1,4 @@
-package com.circlezero.hackathon_cake.secury;
+package com.circlezero.hackathon_cake.security;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

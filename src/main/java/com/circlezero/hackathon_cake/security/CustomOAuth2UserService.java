@@ -1,4 +1,4 @@
-package com.circlezero.hackathon_cake.secury;
+package com.circlezero.hackathon_cake.security;
 
 import com.circlezero.hackathon_cake.member.Member;
 import com.circlezero.hackathon_cake.member.MemberRepository;
@@ -46,7 +46,7 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
     }
 
     private Member saveOrUpdate(OAuthAttributes attributes) {
-        Member member = memberRepository.findByUserId(
+        Member member = memberRepository.findMemberByMemberId(
                         attributes.getUserId())
                 .map(entity -> entity.update(attributes.getName()))
                 .orElse(attributes.toEntity());

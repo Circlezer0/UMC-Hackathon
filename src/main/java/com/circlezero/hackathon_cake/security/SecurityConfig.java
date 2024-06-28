@@ -1,4 +1,4 @@
-package com.circlezero.hackathon_cake.secury;
+package com.circlezero.hackathon_cake.security;
 
 import com.circlezero.hackathon_cake.member.Role;
 import lombok.RequiredArgsConstructor;
@@ -44,7 +44,7 @@ public class SecurityConfig {
                 .requestMatchers("/", "/css/**", "/images/**", "/js**").permitAll()
                 .requestMatchers("/admin/**").hasRole(Role.ADMIN.name())
                 .requestMatchers("/loginForm/**", "/signinForm/**").anonymous()
-                .anyRequest().authenticated()
+                .anyRequest().permitAll()
         );
 
         httpSecurity.formLogin(form -> form

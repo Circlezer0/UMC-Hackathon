@@ -1,5 +1,6 @@
 package com.circlezero.hackathon_cake.member;
 
+import com.circlezero.hackathon_cake.web.dto.memberDTO.MemberRequestDTO;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -13,13 +14,14 @@ public class MemberService {
     private final HttpSession httpSession;
 
 
-    public Member signInMember(String userId, String name, String passwd){
+    public Member signInMember(MemberRequestDTO.JoinDto request){
         Member member = Member.builder()
                 .provider("FormLogin")
-                .userId(userId)
-                .name(name)
-                .password(encoder.encode(passwd))
-                .role(Role.ADMIN)
+                .name(request.getName())
+                .nickname(request.getNickname())
+                .password(encoder.encode(request.getPassword()))
+                .email(request.getEmail())
+                .role(Role.USER)
                 .build();
         memberRepository.save(member);
         return member;
