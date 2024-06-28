@@ -1,4 +1,4 @@
 package com.circlezero.hackathon_cake.domain;
 
-public class User {
+public class RecordImage {
 }
