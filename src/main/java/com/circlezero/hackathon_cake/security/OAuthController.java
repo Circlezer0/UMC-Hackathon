@@ -1,12 +1,9 @@
 package com.circlezero.hackathon_cake.security;
 
-import com.circlezero.hackathon_cake.member.Member;
-import com.circlezero.hackathon_cake.member.MemberService;
+import com.circlezero.hackathon_cake.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController

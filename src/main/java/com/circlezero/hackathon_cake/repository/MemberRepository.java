@@ -1,5 +1,6 @@
-package com.circlezero.hackathon_cake.member;
+package com.circlezero.hackathon_cake.repository;
 
+import com.circlezero.hackathon_cake.domain.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

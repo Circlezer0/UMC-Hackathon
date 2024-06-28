@@ -11,6 +11,7 @@ public class MemberRequestDTO {
         String name;
         String nickname;
         String password;
+        String passwordConfirm;
         String email;
         String phoneNumber;
     }

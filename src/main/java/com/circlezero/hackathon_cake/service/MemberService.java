@@ -1,7 +1,10 @@
-package com.circlezero.hackathon_cake.member;
+package com.circlezero.hackathon_cake.service;
 
+import com.circlezero.hackathon_cake.domain.Member;
+import com.circlezero.hackathon_cake.repository.MemberRepository;
+import com.circlezero.hackathon_cake.domain.enums.Role;
+import com.circlezero.hackathon_cake.domain.SessionMember;
 import com.circlezero.hackathon_cake.web.dto.memberDTO.MemberRequestDTO;
-import com.circlezero.hackathon_cake.web.dto.memberDTO.MemberResponseDTO;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

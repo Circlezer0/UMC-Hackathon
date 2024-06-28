@@ -2,7 +2,7 @@ package com.circlezero.hackathon_cake.domain.mapping;
 
 import com.circlezero.hackathon_cake.domain.CommunityPost;
 import com.circlezero.hackathon_cake.domain.common.BaseEntity;
-import com.circlezero.hackathon_cake.member.Member;
+import com.circlezero.hackathon_cake.domain.Member;
 import jakarta.persistence.*;
 import lombok.*;
 

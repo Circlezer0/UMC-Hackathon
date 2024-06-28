@@ -1,6 +1,6 @@
 package com.circlezero.hackathon_cake.converter;
 
-import com.circlezero.hackathon_cake.member.Member;
+import com.circlezero.hackathon_cake.domain.Member;
 import com.circlezero.hackathon_cake.web.dto.memberDTO.MemberRequestDTO;
 import com.circlezero.hackathon_cake.web.dto.memberDTO.MemberResponseDTO;
 

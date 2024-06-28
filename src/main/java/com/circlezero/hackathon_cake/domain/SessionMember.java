@@ -1,4 +1,4 @@
-package com.circlezero.hackathon_cake.member;
+package com.circlezero.hackathon_cake.domain;
 
 import lombok.Getter;
 

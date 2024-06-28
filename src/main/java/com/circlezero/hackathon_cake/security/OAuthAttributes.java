@@ -1,8 +1,8 @@
 package com.circlezero.hackathon_cake.security;
 
 
-import com.circlezero.hackathon_cake.member.Member;
-import com.circlezero.hackathon_cake.member.Role;
+import com.circlezero.hackathon_cake.domain.Member;
+import com.circlezero.hackathon_cake.domain.enums.Role;
 import lombok.Builder;
 import lombok.Getter;
 

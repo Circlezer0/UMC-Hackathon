@@ -1,6 +1,6 @@
 package com.circlezero.hackathon_cake.security;
 
-import com.circlezero.hackathon_cake.member.Role;
+import com.circlezero.hackathon_cake.domain.enums.Role;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

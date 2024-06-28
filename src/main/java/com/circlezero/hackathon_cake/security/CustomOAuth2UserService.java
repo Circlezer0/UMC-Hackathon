@@ -1,9 +1,9 @@
 package com.circlezero.hackathon_cake.security;
 
-import com.circlezero.hackathon_cake.member.Member;
-import com.circlezero.hackathon_cake.member.MemberRepository;
-import com.circlezero.hackathon_cake.member.Role;
-import com.circlezero.hackathon_cake.member.SessionMember;
+import com.circlezero.hackathon_cake.domain.Member;
+import com.circlezero.hackathon_cake.repository.MemberRepository;
+import com.circlezero.hackathon_cake.domain.enums.Role;
+import com.circlezero.hackathon_cake.domain.SessionMember;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

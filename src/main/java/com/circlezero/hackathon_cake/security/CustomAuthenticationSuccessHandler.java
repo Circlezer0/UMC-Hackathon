@@ -1,8 +1,8 @@
 package com.circlezero.hackathon_cake.security;
 
-import com.circlezero.hackathon_cake.member.Member;
-import com.circlezero.hackathon_cake.member.MemberRepository;
-import com.circlezero.hackathon_cake.member.SessionMember;
+import com.circlezero.hackathon_cake.domain.Member;
+import com.circlezero.hackathon_cake.repository.MemberRepository;
+import com.circlezero.hackathon_cake.domain.SessionMember;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

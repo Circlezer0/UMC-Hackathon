@@ -1,7 +1,7 @@
 package com.circlezero.hackathon_cake.security;
 
-import com.circlezero.hackathon_cake.member.Member;
-import com.circlezero.hackathon_cake.member.MemberRepository;
+import com.circlezero.hackathon_cake.domain.Member;
+import com.circlezero.hackathon_cake.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

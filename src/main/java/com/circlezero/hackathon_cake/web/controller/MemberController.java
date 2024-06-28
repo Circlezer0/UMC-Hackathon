@@ -1,8 +1,10 @@
-package com.circlezero.hackathon_cake.member;
+package com.circlezero.hackathon_cake.web.controller;
 
 
 import com.circlezero.hackathon_cake.apiPayload.ApiResponse;
 import com.circlezero.hackathon_cake.converter.MemberConverter;
+import com.circlezero.hackathon_cake.domain.Member;
+import com.circlezero.hackathon_cake.service.MemberService;
 import com.circlezero.hackathon_cake.web.dto.memberDTO.MemberRequestDTO;
 import com.circlezero.hackathon_cake.web.dto.memberDTO.MemberResponseDTO;
 import lombok.RequiredArgsConstructor;
