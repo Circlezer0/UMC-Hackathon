@@ -1,6 +1,7 @@
 package com.circlezero.hackathon_cake.domain;
 
 import com.circlezero.hackathon_cake.domain.common.BaseEntity;
+import com.circlezero.hackathon_cake.member.Member;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,7 +21,7 @@ public class Review extends BaseEntity {
     private Integer star;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "member_id")
     private Member member;
 
     @ManyToOne(fetch = FetchType.LAZY)
