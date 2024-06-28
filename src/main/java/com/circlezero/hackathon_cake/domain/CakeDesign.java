@@ -1,8 +1,15 @@
 package com.circlezero.hackathon_cake.domain;
 
+import com.circlezero.hackathon_cake.domain.common.BaseEntity;
 import jakarta.persistence.*;
+import lombok.*;
 
-public class CakeDesign {
+@Entity
+@Getter
+@Builder
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
+public class CakeDesign extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
