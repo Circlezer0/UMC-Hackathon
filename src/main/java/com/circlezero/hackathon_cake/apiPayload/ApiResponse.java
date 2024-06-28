@@ -1,8 +1,7 @@
 package com.circlezero.hackathon_cake.apiPayload;
 
-
-import com.circlezero.hackathon_cake.apiPayload.code.status.SuccessStatus;
 import com.circlezero.hackathon_cake.apiPayload.code.BaseCode;
+import com.circlezero.hackathon_cake.apiPayload.code.status.SuccessStatus;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
@@ -35,6 +34,6 @@ public class ApiResponse<T> {
 
     // 실패한 경우 응답 생성
     public static <T> ApiResponse<T> onFailure(String code, String message, T data){
-        return new ApiResponse<>(false, code, message, data);
+        return new ApiResponse<>(true, code, message, data);
     }
 }
